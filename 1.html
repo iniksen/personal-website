@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Maryam | Academic Portfolio</title>
+  <meta name="description" content="Maryam's academic portfolio in telecommunications, radar signal processing, and machine learning.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #080808;
+      color: #f5f5f5;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 88%);
+      margin: auto;
+    }
+
+    header {
+      border-bottom: 1px solid #252525;
+      padding: 22px 0;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 600;
+      letter-spacing: -1px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      font-size: 13px;
+      color: #bcbcbc;
+    }
+
+    .nav-links a:hover,
+    .contact-links a:hover {
+      color: white;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      align-items: center;
+      gap: 70px;
+      padding: 75px 40px 65px;
+      border-bottom: 1px solid #292929;
+    }
+
+    .eyebrow {
+      color: #999;
+      font-size: 12px;
+      letter-spacing: 5px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 66px);
+      font-weight: 500;
+      letter-spacing: -2px;
+      line-height: 1.15;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      font-size: 19px;
+      color: #d0d0d0;
+      line-height: 1.5;
+      margin-bottom: 22px;
+    }
+
+    .intro {
+      color: #aaa;
+      font-size: 15px;
+      max-width: 550px;
+    }
+
+    .about-link {
+      display: inline-block;
+      margin-top: 27px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #777;
+      font-size: 14px;
+    }
+
+    .about-link span {
+      margin-left: 12px;
+    }
+
+    .profile {
+      text-align: center;
+    }
+
+    .profile img {
+      width: 260px;
+      height: 260px;
+      max-width: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+ 
+      border: 1px solid #333;
+      display: block;
+      margin: auto;
+    }
+
+    .signature {
+      margin-top: 20px;
+      color: #aaa;
+      font-family: cursive;
+      font-size: 25px;
+      transform: rotate(-8deg);
+      display: inline-block;
+    }
+
+    section {
+      padding: 42px 0;
+      scroll-margin-top: 25px;
+    }
+
+    .section-title {
+      font-size: 23px;
+      font-weight: 500;
+      margin-bottom: 25px;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .column {
+      padding: 5px 28px;
+      border-right: 1px solid #292929;
+    }
+
+    .column:first-child {
+      padding-left: 0;
+    }
+
+    .column:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    .column h3 {
+      font-size: 17px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .column ul {
+      padding-left: 18px;
+    }
+
+    .column li {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 8px;
+      padding-left: 3px;
+    }
+
+    .column li::marker {
+      color: #777;
+    }
+
+    .goal {
+      border: 1px solid #303030;
+      border-radius: 10px;
+      padding: 28px 32px;
+      display: grid;
+      grid-template-columns: 55px 1fr;
+      gap: 20px;
+    }
+
+    .goal-icon {
+      font-size: 30px;
+      color: #ddd;
+    }
+
+    .goal h3 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .goal p {
+      color: #aaa;
+      font-size: 14px;
+      max-width: 700px;
+    }
+
+    .contact {
+      border-top: 1px solid #292929;
+      padding: 30px 0;
+    }
+
+    .contact-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      font-size: 13px;
+      color: #aaa;
+    }
+
+    .footer-note {
+      color: #777;
+      font-size: 10px;
+      letter-spacing: 3px;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 55px 0;
+      }
+
+      .profile {
+        grid-row: 1;
+      }
+
+      .profile img {
+        width: 200px;
+        height: 200px;
+      }
+
+      .columns {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .column,
+      .column:first-child,
+      .column:last-child {
+        padding: 0;
+        border-right: none;
+        border-bottom: 1px solid #292929;
+        padding-bottom: 25px;
+      }
+
+      .column:last-child {
+        border-bottom: none;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: 90%;
+      }
+
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        font-size: 12px;
+      }
+
+      .goal {
+        grid-template-columns: 1fr;
+        padding: 23px;
+      }
+
+      .contact-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="container">
+      <a href="#home" class="logo">Maryam Pakdel.</a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#research">Research</a>
+        <a href="#learning">Learning</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- Introduction -->
+    <section class="hero" id="home">
+
+      <div>
+        <p class="eyebrow">HELLO, I'M</p>
+
+        <h1>Maryam Pakdel</h1>
+
+        <p class="subtitle">
+          Electrical Engineering Student<br>
+          Telecommunications Engineering
+        </p>
+
+        <p class="intro">
+          I am a Telecommunications Engineering student . I am interested
+          in radar signal processing, data science, and machine
+          learning. I am building my technical skills and working
+          toward a future in research, with the goal of pursuing
+          a Direct PhD.
+        </p>
+
+        <a class="about-link" href="#about">
+          About Me <span>→</span>
+        </a>
+      </div>
+
+      <div class="profile">
+        <!-- Replace profile.jpg with your own photo -->
+        <img
+          src="C:\Users\mm\OneDrive\Documents\personal website codes\images\ae30aa03-2cd1-4dbb-b679-9ed218540cce.jpg"
+          alt="Maryam's profile photo"
+        >
+
+        <p class="signature">Maryam</p>
+      </div>
+
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+
+      <p class="intro">
+        I am developing my foundation in engineering, programming,
+        and scientific research. I enjoy learning through practical
+        projects and exploring how computational methods can solve
+        real engineering problems.
+      </p>
+    </section>
+
+    <!-- Skills, Research, Learning -->
+    <section>
+      <div class="columns">
+
+        <div class="column" id="skills">
+          <h3>Technical Skills</h3>
+          <ul>
+            <li>Python</li>
+            <li>Machine Learning</li>
+            <li>MATLAB — learning</li>
+            <li>Git &amp; GitHub</li>
+            <li>Data Analysis &amp; Visualization</li>
+            <li>Deep Learning — learning</li>
+            <li>Languages:English,Turkish</li>
+          </ul>
+        </div>
+
+        <div class="column" id="research">
+          <h3>Research Interests</h3>
+          <ul>
+            <li>Radar Signal Processing</li>
+            <li>Target Detection &amp; Tracking</li>
+            <li>Signal Analysis</li>
+            <li>Machine Learning for Radar</li>
+            <li>Data Science</li>
+            <li>Intelligent Systems</li>
+          </ul>
+        </div>
+
+        <div class="column" id="learning">
+          <h3>Currently Learning</h3>
+          <ul>
+            <li>Machine Learning &amp; Deep Learning</li>
+            <li>Radar Signal Analysis using MATLAB</li>
+            <li>Reading Scientific Papers</li>
+            <li>Research and Technical Skills</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Goal -->
+    <section id="goals">
+      <div class="goal">
+        <div class="goal-icon" aria-hidden="true">◎</div>
+
+        <div>
+          <h3>My Goal</h3>
+
+          <p>
+            My long-term goal is to pursue research in radar signal
+            processing and intelligent systems. I aim to build a
+            strong academic and technical foundation, contribute
+            to meaningful research projects, and pursue direct PhD
+            admission after my undergraduate studies, subject to
+            university eligibility and admission requirements.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Contact -->
+  <footer class="contact" id="contact">
+    <div class="container contact-inner">
+
+      <div class="contact-links">
+        <!-- Replace the example links with your own -->
+        <a href="imaryamepakdel@example.com">Email</a>
+
+        <a href="https://www.linkedin.com/in/maryam-pakdel-a8b662394/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BBUDw9BD5TMuBV2mR9nfqog%3D%3D"
+           target="_blank"
+           rel="noopener noreferrer">LinkedIn</a>
+
+        <a href="https://github.com/iniksen "
+           target="_blank"
+           rel="noopener noreferrer">GitHub</a>
+      </div>
+
+      <p class="footer-note">
+        LEARNING / BUILDING / RESEARCH
+      </p>
+
+      <p style="color:#666;font-size:12px;">
+        © <span id="year"></span> Maryam
+      </p>
+
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
